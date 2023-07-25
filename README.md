@@ -1,8 +1,7 @@
-# React + Vite
+# Tailwind Form Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I have created this form without using tailwind css in React.
 
-Currently, two official plugins are available:
+Through this project, I learnt about how to use useState hook in forms. And how does input fields like text, date, email, password works and I also learnt about how to create dropdowns, radiobuttons and checkboxes in React. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I have used vite for the react setup. For more info: https://vitejs.dev/guide/
