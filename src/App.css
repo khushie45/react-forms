@@ -91,20 +91,6 @@ p {
 
 }
 
-.photo-change-button {
-    font-family: 'Karla', sans-serif;
-    font-size: 15px;
-    background: none;
-    color: black;
-    font-weight: bold;
-    border: 1px solid gray;
-    box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
-    border-radius: 5px;
-    padding: 0 20px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 .wide-input {
     max-width: 100%;
 }
@@ -119,12 +105,24 @@ p {
 
 .photo-img {
     width: 45px;
-    margin-right: 15px
+    margin: 25px 10px 0 0
+}
+
+.photo-change-label {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    background: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid gray;
+    box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 .photo {
     display: flex;
-    margin: 10px 0;
 }
 
 .form--div input[type="file"] {

@@ -72,7 +72,10 @@ function SignUp() {
                 <label htmlFor="photo">Photo</label>
                 <div className="photo">
                     <img src="https://svgshare.com/i/4V0.svg" className="photo-img"/>
-                    <button className="photo-change-button">Change</button>
+                    <input type="file" id="photo" />
+                    <label htmlFor="photo" className="photo-change-label">
+                        Change
+                    </label>
                 </div>
 
                 <label>Cover Photo</label>
