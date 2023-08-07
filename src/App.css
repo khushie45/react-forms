@@ -137,11 +137,13 @@ p {
 }
 
 span {
+    font-size: 17px;
     display: flex;
     justify-content: center;
     margin-top: 13%;
     color: blue;
     font-weight: bold;
+    cursor: pointer;
 }
 
 hr {
@@ -199,9 +201,11 @@ hr {
     font-size: 18px;
     font-weight: bold;
     border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
     margin-right: 10px;
     cursor: pointer;
-    background-color: white;
+    background-color: lightgray;
 }
 
 .save-button {
@@ -214,4 +218,81 @@ hr {
     border-radius: 5px;
     padding: 8px 20px;
     cursor: pointer;
+}
+
+.toggler {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.toggler p {
+    font-size: 1.1em;
+}
+
+.toggler--slider {
+    width: 30px;
+    height: 15px;
+    background-color: #2B283A;
+    border-radius: 2em;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #2B283A;
+    box-sizing: content-box;
+}
+
+div.dark .toggler--slider {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+div.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #000000;
+}
+
+div.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+div.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+div.dark .toggler--slider {
+    justify-content: flex-end;
+}
+
+div.dark {
+    background-color: #282D35;
+    color: #FFFFFF;
+}
+
+div.dark .photo-change-label {
+    background-color: #FFFFFF;
+}
+
+div.dark .save-button {
+    background-color: #301a9d;
+}
+
+div.dark span {
+    color: #8480fa;
 }

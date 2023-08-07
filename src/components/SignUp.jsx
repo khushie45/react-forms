@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from "react"
 
 function SignUp() {
@@ -21,8 +22,14 @@ function SignUp() {
         offers: false,
         pushNotifications: ""
     })
-
     console.log(form)
+
+    const [darkMode, setDarkMode] = React.useState(true)
+    
+    function toggleDarkMode() {
+        setDarkMode(prevMode => !prevMode)
+    }
+
     function handleChange(event) {
         const {name, value, type, checked} = event.target
         setForm(prevForm => ({
@@ -41,7 +48,14 @@ function SignUp() {
     }
 
     return (
-        <div className="form--div">
+        <div className={`form--div ${darkMode ? "": "dark"}`}>
+            <div className="toggler">
+                <p className="toggler--light">Light</p>
+                <div className="toggler--slider" onClick={toggleDarkMode} >
+                    <div className="toggler--slider--circle"></div>
+                </div>
+                <p className="toggler--dark">Dark</p>
+            </div>
             <form>
                 <h2>Registration Form</h2>
                 <h3>Profile</h3>
