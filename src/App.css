@@ -129,6 +129,13 @@ p {
     display: none;
 }
 
+.photo--file--name {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: -10px;
+}
+
 .coverPhoto {
     height: 150px;
     border: 1px dashed lightgray;
@@ -286,7 +293,7 @@ div.dark {
 }
 
 div.dark .photo-change-label {
-    background-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 div.dark .save-button {
@@ -295,4 +302,9 @@ div.dark .save-button {
 
 div.dark span {
     color: #8480fa;
+}
+
+div.dark.form--div input, div.dark.form--div textarea, div.dark.form--div select {
+    background-color: #282D35;
+    color: #FFFFFF;
 }

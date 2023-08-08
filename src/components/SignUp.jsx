@@ -1,28 +1,32 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useState } from "react"
 
+const initialFormData = {
+    username:"",
+    about: "",
+    photo: "",
+    coverPhoto: "",
+    firstName:"",
+    lastName: "",
+    dob:"",
+    email:"",
+    password:"",
+    country: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    comments: false,
+    candidates: false,
+    offers: false,
+    pushNotifications: ""
+}
+
 function SignUp() {
-    const [form, setForm] = useState({
-        username:"",
-        about: "",
-        photo: "",
-        coverPhoto: "",
-        firstName:"",
-        lastName: "",
-        dob:"",
-        email:"",
-        password:"",
-        country: "",
-        streetAddress: "",
-        city: "",
-        state: "",
-        postalCode: "",
-        comments: false,
-        candidates: false,
-        offers: false,
-        pushNotifications: ""
-    })
-    console.log(form)
+    const [form, setForm] = useState(initialFormData)
+
+    const coverPhotoInput = useRef(null)
+    const photoInput = useRef(null)
 
     const [darkMode, setDarkMode] = React.useState(true)
     
@@ -40,11 +44,28 @@ function SignUp() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("success")
+        console.log(form)
+        alert(`Form submitted successfully!! 
+Form data: ${JSON.stringify(form, null, 5)}`)
     }
 
     function handleClick(event) {
         event.preventDefault()
+        setForm(initialFormData)
+    }
+
+    function photoOnChange() {
+        setForm(prevForm => ({
+            ...prevForm,
+            photo: photoInput.current.files[0].name
+        }))
+    }
+
+    function coverPhotoOnChange() {
+        setForm(prevForm => ({
+            ...prevForm,
+            coverPhoto: coverPhotoInput.current.files[0].name
+        }))
     }
 
     return (
@@ -86,21 +107,28 @@ function SignUp() {
                 <label htmlFor="photo">Photo</label>
                 <div className="photo">
                     <img src="https://svgshare.com/i/4V0.svg" className="photo-img"/>
-                    <input type="file" id="photo" />
-                    <label htmlFor="photo" className="photo-change-label">
+                    <label id="photo" className="photo-change-label">
+                        <input 
+                        type="file"
+                        accept=".jpg, .jpeg, .png" 
+                        ref={photoInput}
+                        onChange={photoOnChange}
+                        />
                         Change
                     </label>
+                    <h4 className="photo--file--name">{form.photo}</h4>
                 </div>
 
-                <label>Cover Photo</label>
-                <label htmlFor="coverPhoto" className="coverPhoto">
-                    <span>Upload a file</span>
+                <label htmlFor="coverPhoto">Cover Photo</label>
+                <label className="coverPhoto">
+                    <span>{form.coverPhoto ? form.coverPhoto : "Upload a file"}</span>
+                    {/* <span>Upload a file</span> */}
                     <input
                         type="file"
+                        accept=".jpg, .jpeg, .png"
                         id="coverPhoto" 
-                        name="coverPhoto"
-                        value={form.coverPhoto} 
-                        onChange={handleChange}
+                        ref={coverPhotoInput}
+                        onChange={coverPhotoOnChange}
                     />
                 </label>
 
